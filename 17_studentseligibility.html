@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Student Eligibility</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .box {
+            width: 400px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 25px;
+            border: 1px solid #aaa;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+        }
+
+        #message {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #eee;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Eligibility Check</h1>
+
+
+<label>Age:</label>
+
+<input type="number" id="age">
+
+
+<label>Attendance Percentage:</label>
+
+<input type="number" id="attendance">
+
+
+<label>Marks:</label>
+
+<input type="number" id="marks">
+
+
+<button onclick="checkEligibility()">
+Check Eligibility
+</button>
+
+
+<div id="message"></div>
+
+</div>
+
+
+<script>
+
+function checkEligibility() {
+
+    var age =
+        Number(document.getElementById("age").value);
+
+    var attendance =
+        Number(document.getElementById("attendance").value);
+
+    var marks =
+        Number(document.getElementById("marks").value);
+
+
+    if (age >= 18 &&
+        attendance >= 75 &&
+        marks >= 40) {
+
+        alert("Student is eligible.");
+
+        document.getElementById("message").innerHTML =
+            "Student is eligible for examination/admission.";
+
+    }
+
+    else {
+
+        alert("Student is not eligible.");
+
+        document.getElementById("message").innerHTML =
+            "Student is not eligible for examination/admission.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
