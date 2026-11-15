@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Student Registration</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .form-box {
+            width: 450px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: white;
+            border: 1px solid #aaa;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+
+        input[type="radio"] {
+            margin-top: 10px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        #message {
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+<h1>Student Registration</h1>
+
+<form onsubmit="return validateForm()">
+
+    <label>Name</label>
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <label>Email</label>
+    <input type="email" id="email" placeholder="Enter your email">
+
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Enter password">
+
+    <label>Gender</label>
+
+    <input type="radio" name="gender" value="Male">
+    Male
+
+    <input type="radio" name="gender" value="Female">
+    Female
+
+    <br>
+
+    <label>Date of Birth</label>
+    <input type="date" id="dob">
+
+    <label>Course</label>
+
+    <select id="course">
+        <option value="">Select Course</option>
+        <option>BCA</option>
+        <option>BSc IT</option>
+        <option>Computer Science</option>
+    </select>
+
+    <button type="submit">
+        Register
+    </button>
+
+</form>
+
+
+<div id="message"></div>
+
+</div>
+
+
+<script>
+
+function validateForm() {
+
+    var name = document.getElementById("name").value;
+
+    var email = document.getElementById("email").value;
+
+    var password =
+        document.getElementById("password").value;
+
+    var dob =
+        document.getElementById("dob").value;
+
+    var course =
+        document.getElementById("course").value;
+
+
+    var gender =
+        document.querySelector('input[name="gender"]:checked');
+
+
+    if (name == "") {
+
+        showMessage("Please enter your name.");
+
+        return false;
+    }
+
+
+    if (email == "") {
+
+        showMessage("Please enter your email.");
+
+        return false;
+    }
+
+
+    if (password.length < 6) {
+
+        showMessage("Password must contain at least 6 characters.");
+
+        return false;
+    }
+
+
+    if (gender == null) {
+
+        showMessage("Please select your gender.");
+
+        return false;
+    }
+
+
+    if (dob == "") {
+
+        showMessage("Please select your date of birth.");
+
+        return false;
+    }
+
+
+    if (course == "") {
+
+        showMessage("Please select your course.");
+
+        return false;
+    }
+
+
+    alert("Registration successful!");
+
+    showMessage("Registration completed successfully.");
+
+    return false;
+
+}
+
+
+function showMessage(message) {
+
+    document.getElementById("message").innerHTML =
+        message;
+
+}
+
+</script>
+
+</body>
+</html>
