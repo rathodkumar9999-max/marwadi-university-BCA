@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Product Page</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        /* Navigation */
+
+        nav {
+            background-color: black;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+
+        /* Product Card */
+
+        .product {
+            width: 400px;
+            margin: 50px auto;
+            padding: 25px;
+            background-color: white;
+            text-align: center;
+
+            border: 2px solid #ddd;
+            border-radius: 15px;
+
+            box-shadow: 0 0 15px #aaa;
+        }
+
+
+        /* Image manipulation */
+
+        .product img {
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+
+            transition: transform 0.5s;
+        }
+
+        .product img:hover {
+            transform: scale(1.1) rotate(2deg);
+        }
+
+
+        /* Pseudo-element */
+
+        h1::after {
+            content: " ★";
+            color: orange;
+        }
+
+
+        p::first-letter {
+            font-size: 25px;
+            color: red;
+        }
+
+
+        /* Button */
+
+        .buy {
+            background-color: green;
+            color: white;
+
+            border: none;
+            padding: 12px 25px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .buy:hover {
+            background-color: darkgreen;
+            transform: scale(1.1);
+        }
+
+
+        /* Animation */
+
+        .product {
+            animation: moveBox 1s;
+        }
+
+        @keyframes moveBox {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<nav>
+
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+
+</nav>
+
+
+<div class="product">
+
+    <img src="product.jpg" alt="Smart Watch">
+
+    <h1>Smart Watch</h1>
+
+    <p>
+        This smart watch is useful for daily activities,
+        fitness tracking and notifications.
+    </p>
+
+    <h2>₹1999</h2>
+
+    <button class="buy">Buy Now</button>
+
+</div>
+
+</body>
+</html>
