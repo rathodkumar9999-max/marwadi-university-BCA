@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Subject Information</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .box {
+            width: 500px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 25px;
+            border: 1px solid #aaa;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        .subject {
+            background-color: #e8f0f8;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .subject:hover {
+            background-color: lightblue;
+        }
+
+        #info {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #fafafa;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>My Subjects</h1>
+
+<p>Click on a subject to see its information.</p>
+
+<div class="subject" onclick="showSubject(0)">
+    HTML
+</div>
+
+<div class="subject" onclick="showSubject(1)">
+    CSS
+</div>
+
+<div class="subject" onclick="showSubject(2)">
+    JavaScript
+</div>
+
+<div class="subject" onclick="showSubject(3)">
+    Database
+</div>
+
+<div id="info">
+    Select a subject.
+</div>
+
+</div>
+
+
+<script>
+
+var subjects = [
+
+    {
+        name: "HTML",
+        details: "HTML is used to create the structure of a webpage."
+    },
+
+    {
+        name: "CSS",
+        details: "CSS is used to design and style webpages."
+    },
+
+    {
+        name: "JavaScript",
+        details: "JavaScript is used to make webpages interactive."
+    },
+
+    {
+        name: "Database",
+        details: "A database is used to store and manage data."
+    }
+
+];
+
+
+function showSubject(index) {
+
+    document.getElementById("info").innerHTML =
+
+        "<h2>" + subjects[index].name + "</h2>" +
+
+        "<p>" + subjects[index].details + "</p>";
+
+}
+
+</script>
+
+</body>
+</html>
