@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas and SVG</title>
+</head>
+<body>
+
+    <h1>HTML5 Canvas</h1>
+
+    <canvas id="myCanvas" width="600" height="300"
+            style="border:1px solid black;">
+    </canvas>
+
+    <script>
+
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // Rectangle
+        ctx.fillStyle = "lightblue";
+        ctx.fillRect(40, 40, 150, 80);
+
+        // Circle
+        ctx.beginPath();
+        ctx.arc(300, 80, 45, 0, 2 * Math.PI);
+        ctx.stroke();
+
+        // Line
+        ctx.beginPath();
+        ctx.moveTo(400, 40);
+        ctx.lineTo(540, 120);
+        ctx.stroke();
+
+        // Text
+        ctx.font = "25px Arial";
+        ctx.fillText("College Tech", 200, 200);
+
+    </script>
+
+    <h2>SVG College Logo</h2>
+
+    <svg width="250" height="250">
+
+        <circle cx="125" cy="125" r="90"
+                fill="none" stroke="black" stroke-width="4"/>
+
+        <rect x="80" y="90" width="90" height="60"
+              fill="none" stroke="black" stroke-width="4"/>
+
+        <path d="M70 90 L125 55 L180 90"
+              fill="none" stroke="black" stroke-width="4"/>
+
+        <text x="125" y="180"
+              text-anchor="middle"
+              font-size="18">
+            COLLEGE
+        </text>
+
+    </svg>
+
+</body>
+</html>
