@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Location</title>
+</head>
+<body>
+
+    <h1>College Location</h1>
+
+    <h2>My Current Location</h2>
+
+    <button onclick="getLocation()">Get Location</button>
+
+    <p id="location">Location will appear here.</p>
+
+    <script>
+
+        function getLocation() {
+
+            var output = document.getElementById("location");
+
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+
+                        output.innerHTML =
+                            "Latitude: " +
+                            position.coords.latitude +
+                            "<br>Longitude: " +
+                            position.coords.longitude;
+
+                    },
+                    function() {
+                        output.innerHTML = "Unable to get your location.";
+                    }
+                );
+
+            } else {
+                output.innerHTML =
+                    "Geolocation is not supported by your browser.";
+            }
+        }
+
+    </script>
+
+    <h2>Map</h2>
+
+    <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=70.75%2C22.25%2C70.85%2C22.35&amp;layer=mapnik"
+        width="600"
+        height="400"
+        title="College location map">
+    </iframe>
+
+</body>
+</html>
